@@ -3,25 +3,31 @@ interactive-simulation, emotional-resilience, psychology, mental-health, empathy
 
 # 🛡️ Mirror Shield – TECHIN510 Interactive Simulation Project
 
-## Projective objective:
+## Project Objective:
 Develop an interactive simulation tool to help users recognize, understand, and respond to manipulative behaviors often associated with narcissistic personality disorder (NPD), such as gaslighting, love bombing, and blame-shifting. The tool will educate users through realistic dialogue paths and reflection mechanisms, fostering emotional resilience and awareness.
 
+Goals:
+1. Front-end UI implementation for a website
+2. Integration with LLM technology to generate NPD dialogue
+
+Constraints:
+1. Must be delivered within the 10 week ccontract
+2. Final product must be bug free and accessible by client
+   
 ## Target users:
 - Individuals recovering from toxic relationships or emotionally manipulative dynamics
 - People vulnerable to manipulation (empaths, highly sensitive individuals, caregivers)
-- Supporters or friends of those affected
+- Supporters or friends of those affected with NPD
 
-## Features:
+## Must Have Features:
 - Branching scenario simulator with AI/NPD-patterned dialogue
 - Real-time red flag radar that highlights manipulation tactics
+
+## Nice to Have Features:
 - Toolkit with therapist-informed scripts for boundary setting
 - Emotional energy meter to visualize the toll of interactions
 
-## Planned feature:
-- One fully functioning dialogue path with branching choices
-- “Red Flag Radar” module with pattern-matching logic
-- Visual energy meter synced with user responses
-- Responsive front-end with basic styling
+
 
 ## Features nice-to-have:
 - Reflection journaling component
@@ -39,13 +45,13 @@ Develop an interactive simulation tool to help users recognize, understand, and 
 
 | 🗂️ Phase     | 🎯 Milestone                                      | 📅 Due Date    | 🚦 Status       |
 |--------------|--------------------------------------------------|----------------|-----------------|
-| 🧠 Planning   | Define features, tone, and visual direction       | April 8, 2025  | ✅ Completed     |
-| 🛠️ Setup      | GitHub repo, file structure, basic README         | April 9, 2025  | ✅ Completed     |
-| 🎭 Prototype  | Build 1 interactive scenario path w/ choices      | April 15, 2025 | 🟡 In Progress   |
-| 🧩 Core Logic | Red Flag Radar + Energy Meter module              | April 22, 2025 | 🔜 Upcoming      |
-| 🎨 Polish     | UI/UX refinement + optional features (journal etc.)| May 3, 2025    | ⬜ Not Started   |
-| 🧪 Testing    | Playtest + debugging                              | May 8, 2025    | ⬜ Not Started   |
-| 🧾 Submission | Final demo, walkthrough video, documentation      | May 10, 2025   | ⬜ Not Started   |
+| 🧠 Planning   | Define features, tone, and visual direction       | Week 1       | ✅ Completed     |
+| 🛠️ Setup      | GitHub repo, file structure, basic README         | Week 2       | ✅ Completed     |
+| 🎭 Prototype  | Build 1 interactive scenario path w/ choices      | Week 3 - 6   | 🟡 In Progress   |
+| 🧩 Core Logic | Red Flag Radar + Energy Meter module              | Week 7       | 🔜 Upcoming      |
+| 🎨 Polish     | UI/UX refinement + optional features (journal etc.)| Week 8      | ⬜ Not Started   |
+| 🧪 Testing    | Playtest + debugging                              | Week 9       | ⬜ Not Started   |
+| 🧾 Submission | Final demo, walkthrough video, documentation      | Week 10      | ⬜ Not Started   |
 
 ---
 
@@ -54,3 +60,7 @@ Develop an interactive simulation tool to help users recognize, understand, and 
 - 🟡 In Progress  
 - 🔜 Upcoming  
 - ⬜ Not Started  
+
+### Contact Info
+Developer: Jason Yang (itismejy@uw.edu)
+Client: Victoria Yang (vicjny@uw.edu)
