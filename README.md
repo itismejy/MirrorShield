@@ -40,6 +40,9 @@ Constraints:
    ```bash
    git clone https://github.com/your-username/MirrorShield.git
    cd MirrorShield
+2. Run the app:
+   ```bash
+   python3 -m streamlit run app.py
 
 ### 🚧 Development Roadmap
 
@@ -53,6 +56,10 @@ Constraints:
 | 🧪 Testing    | Playtest + debugging                              | Week 9       | ⬜ Not Started                      |
 | 🧾 Submission | Final demo, walkthrough video, documentation      | Week 10      | ⬜ Not Started                      |
 
+#### Unit Test: 
+   ```bash
+   python3 -m pytest
+```
 ---
 
 ### 🔖 Legend
