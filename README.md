@@ -47,7 +47,7 @@ Constraints:
 |--------------|--------------------------------------------------|----------------|-------------------------------------|
 | 🧠 Planning   | Define features, tone, and visual direction       | Week 1       | ✅ Completed                        |
 | 🛠️ Setup      | GitHub repo, file structure, basic README         | Week 2       | ✅ Completed                        |
-| 🎭 Prototype  | Build 1 interactive scenario path w/ choices      | Week 3 - 6   | 🟡 In Progress (finished basic UI)  |
+| 🎭 Prototype  | Build 1 interactive scenario path w/ choices      | Week 3 - 6   | ✅ Completed                        |
 | 🧩 Core Logic | Red Flag Radar + Energy Meter module              | Week 7       | 🔜 Upcoming                         |
 | 🎨 Polish     | UI/UX refinement + optional features (journal etc.)| Week 8      | ⬜ Not Started                      |
 | 🧪 Testing    | Playtest + debugging                              | Week 9       | ⬜ Not Started                      |
