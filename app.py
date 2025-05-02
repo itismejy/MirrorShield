@@ -3,13 +3,14 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 import random
+from utils import sign_map, model, build_chat_prompt, parse_response
 
 # Define sign_map globally so it's available everywhere
-sign_map = [
-    ("Gaslighting", "煤气灯效应"),
-    ("Love bombing", "爱轰炸"),
-    ("Blame-shifting", "推卸责任")
-]
+# sign_map = [
+#     ("Gaslighting", "煤气灯效应"),
+#     ("Love bombing", "爱轰炸"),
+#     ("Blame-shifting", "推卸责任")
+# ]
 
 # Set Streamlit page config FIRST (before any other Streamlit commands)
 st.set_page_config(
@@ -25,21 +26,8 @@ st.sidebar.radio(
     key="language_select"
 )
 
-# 1. Load environment variables
-load_dotenv()
-
-# 2. Configure your Gemini API key
-api_key = os.getenv("GOOGLE_API_KEY")
-if not api_key:
-    st.error("No API key found. Please check your .env file.")
-    st.stop()
-genai.configure(api_key=api_key)
-
 # 3. Choose your Gemini model
 MODEL = "models/gemini-1.5-flash"   # free Flash model
-
-# 4. Create the Gemini model object
-model = genai.GenerativeModel(model_name=MODEL)
 
 # Initial settings page
 if "settings_done" not in st.session_state or not st.session_state["settings_done"]:
@@ -349,45 +337,10 @@ if user_input:
     try:
         selected_signs = st.session_state.get("signs_select", ["Gaslighting", "Love bombing", "Blame-shifting"])
         lang = st.session_state.get("language_select", "English")
-        # Build prompt to request both reply and tactic
-        if lang == "English":
-            tactic_list = ', '.join(selected_signs)
-            prompt = f"""
-You are simulating someone with narcissistic personality disorder traits. Your response should demonstrate one of the following tactics: {tactic_list}.
-
-Given the user's message, reply as the simulated person. Then, on a new line, state the single tactic you used (choose from: {tactic_list}).
-
-Format your response as:
-Reply: <your reply>
-Tactic: <tactic used>
-
-User: {user_input}
-"""
-        else:
-            tactic_list = ', '.join(selected_signs)
-            prompt = f"""
-你正在模拟具有自恋型人格障碍特征的人。你的回复应体现以下特征之一：{tactic_list}。
-
-针对用户消息，先以模拟身份回复。然后换行，写明你用的是哪一个特征（从：{tactic_list} 里选一个）。
-
-请严格用如下格式：
-Reply: <你的回复>
-Tactic: <使用的特征>
-
-用户: {user_input}
-"""
-        response = st.session_state.chat.send_message(prompt)
+        prompt = build_chat_prompt(user_input, selected_signs, lang)
+        response = model.generate_content(prompt)
         assistant_text = response.text
-        # Parse Gemini response
-        reply = ""
-        tactic = ""
-        for line in assistant_text.splitlines():
-            if line.strip().lower().startswith("reply:"):
-                reply = line.split(":", 1)[1].strip()
-            elif line.strip().lower().startswith("tactic:"):
-                tactic = line.split(":", 1)[1].strip()
-        if not reply:
-            reply = assistant_text.strip()
+        reply, tactic = parse_response(assistant_text)
         st.session_state.messages.append({"role": "assistant", "content": reply, "tactic": tactic})
         with st.chat_message("assistant"):
             st.markdown(reply)
